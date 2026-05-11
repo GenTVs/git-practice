@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- =========================================================
+        GitVerse Control Room
+        File: index.html
+
+        Purpose:
+        This HTML file is part of a GitHub collaboration practice project.
+
+        Suggested GitHub practice:
+        - Branch "version1" uploads index.html and app.js
+        - Branch "css" uploads styles.css
+        - Both branches are merged into main using Pull Requests
+
+        Project concept:
+        A futuristic dashboard that teaches the GitHub Flow:
+        Clone → Branch → Edit → Add → Commit → Push → Pull Request → Merge
+
+        Author practice identity:
+        - GenTVs branch: HTML + JavaScript
+        - Collaborator branch: CSS
+    ========================================================== -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GitVerse Control Room | GitHub Collaboration Practice</title>
+
+    <meta
+        name="description"
+        content="A futuristic Git and GitHub collaboration practice dashboard for learning branches, commits, pull requests, and merges."
+    />
+
+    <!-- CSS file from the collaborator branch -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts are optional. If offline, the fallback fonts still work. -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+</head>
+
+<body>
+    <!-- =========================================================
+        BACKGROUND DECORATION
+    ========================================================== -->
+    <div class="page-background" aria-hidden="true">
+        <div class="grid-overlay"></div>
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+        <div class="floating-orb orb-one"></div>
+        <div class="floating-orb orb-two"></div>
+        <div class="floating-orb orb-three"></div>
+    </div>
+
+    <!-- =========================================================
+        APP SHELL
+    ========================================================== -->
+    <div class="app-shell">
+        <!-- =====================================================
+            HEADER / NAVIGATION
+        ====================================================== -->
+        <header class="site-header" id="top">
+            <nav class="navbar" aria-label="Main navigation">
+                <a href="#top" class="brand" aria-label="GitVerse Control Room Home">
+                    <span class="brand-icon" aria-hidden="true">
+                        <span class="brand-node node-a"></span>
+                        <span class="brand-node node-b"></span>
+                        <span class="brand-node node-c"></span>
+                    </span>
+
+                    <span class="brand-text">
+                        <span class="brand-title">GitVerse</span>
+                        <span class="brand-subtitle">Control Room</span>
+                    </span>
+                </a>
+
+                <button
+                    class="nav-toggle"
+                    id="navToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#workflow">Workflow</a></li>
+                    <li><a href="#branches">Branches</a></li>
+                    <li><a href="#pull-request">Pull Request</a></li>
+                    <li><a href="#terminal">Terminal</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- =====================================================
+            HERO SECTION
+        ====================================================== -->
+        <main>
+            <section class="hero-section section" id="mission">
+                <div class="hero-content">
+                    <p class="eyebrow">
+                        <span class="status-dot"></span>
+                        Collaboration Simulation Active
+                    </p>
+
+                    <h1>
+                        Learn GitHub collaboration by merging different worlds into one project.
+                    </h1>
+
+                    <p class="hero-description">
+                        This practice project turns GitHub Flow into a visual control room.
+                        One branch can upload the HTML and JavaScript, another branch can upload
+                        the CSS, and both can be merged into the same final repository.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#workflow" class="btn btn-primary">
+                            Explore Workflow
+                        </a>
+
+                        <a href="#terminal" class="btn btn-secondary">
+                            View Commands
+                        </a>
+                    </div>
+
+                    <div class="hero-meta" aria-label="Project learning goals">
+                        <div class="meta-card">
+                            <span class="meta-number">03</span>
+                            <span class="meta-label">Project Files</span>
+                        </div>
+
+                        <div class="meta-card">
+                            <span class="meta-number">02</span>
+                            <span class="meta-label">GitHub Accounts</span>
+                        </div>
+
+                        <div class="meta-card">
+                            <span class="meta-number">01</span>
+                            <span class="meta-label">Final Merge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="hero-panel" aria-label="Repository simulation panel">
+                    <div class="panel-header">
+                        <div>
+                            <p class="panel-kicker">Repository</p>
+                            <h2>GenTVs / git-collab-lab</h2>
+                        </div>
+
+                        <span class="repo-badge">Public</span>
+                    </div>
+
+                    <div class="repo-window">
+                        <div class="repo-window-top">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="window-title">main</span>
+                        </div>
+
+                        <div class="repo-file-list">
+                            <article class="repo-file file-html">
+                                <span class="file-icon">HTML</span>
+                                <div>
+                                    <h3>index.html</h3>
+                                    <p>Structure uploaded from branch <strong>version1</strong></p>
+                                </div>
+                            </article>
+
+                            <article class="repo-file file-css">
+                                <span class="file-icon">CSS</span>
+                                <div>
+                                    <h3>styles.css</h3>
+                                    <p>Design uploaded from branch <strong>css</strong></p>
+                                </div>
+                            </article>
+
+                            <article class="repo-file file-js">
+                                <span class="file-icon">JS</span>
+                                <div>
+                                    <h3>app.js</h3>
+                                    <p>Interactions uploaded from branch <strong>version1</strong></p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="merge-preview">
+                        <div class="merge-line">
+                            <span class="merge-node node-main"></span>
+                            <span class="merge-track"></span>
+                            <span class="merge-node node-version"></span>
+                            <span class="merge-track"></span>
+                            <span class="merge-node node-css"></span>
+                            <span class="merge-track"></span>
+                            <span class="merge-node node-final"></span>
+                        </div>
+
+                        <div class="merge-labels">
+                            <span>main</span>
+                            <span>version1</span>
+                            <span>css</span>
+                            <span>merged</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- =================================================
+                CONCEPT CARDS
+            ================================================== -->
+            <section class="section concept-section" aria-labelledby="concept-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Core Ideas</p>
+                    <h2 id="concept-title">What this project helps you understand</h2>
+                    <p>
+                        GitHub collaboration becomes easier when you separate the ideas:
+                        local changes, branches, commits, remote branches, pull requests, and merges.
+                    </p>
+                </div>
+
+                <div class="concept-grid">
+                    <article class="concept-card">
+                        <div class="concept-icon">💻</div>
+                        <h3>Local Work</h3>
+                        <p>
+                            Your computer has its own copy of the repository. You can edit files,
+                            create commits, and experiment safely before publishing.
+                        </p>
+                    </article>
+
+                    <article class="concept-card">
+                        <div class="concept-icon">🌿</div>
+                        <h3>Branches</h3>
+                        <p>
+                            Branches are separate timelines. They let multiple people work on
+                            different features without breaking the main project.
+                        </p>
+                    </article>
+
+                    <article class="concept-card">
+                        <div class="concept-icon">☁️</div>
+                        <h3>Remote Repository</h3>
+                        <p>
+                            GitHub stores the shared online version. Pushing uploads your branch
+                            so others can review and merge your work.
+                        </p>
+                    </article>
+
+                    <article class="concept-card">
+                        <div class="concept-icon">🔀</div>
+                        <h3>Pull Requests</h3>
+                        <p>
+                            A Pull Request asks to merge one branch into another. It is the main
+                            conversation space for collaboration on GitHub.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- =================================================
+                WORKFLOW TIMELINE
+            ================================================== -->
+            <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+                <div class="section-heading">
+                    <p class="eyebrow">GitHub Flow</p>
+                    <h2 id="workflow-title">From clone to merge</h2>
+                    <p>
+                        This is the common beginner-friendly workflow used in many GitHub projects.
+                    </p>
+                </div>
+
+                <div class="workflow-timeline" id="workflowTimeline">
+                    <article class="workflow-step active" data-step="1">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Clone</h3>
+                            <p>Download the repository from GitHub to your computer.</p>
+                            <code>git clone &lt;repo-url&gt;</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="2">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Create Branch</h3>
+                            <p>Create a safe workspace for your change.</p>
+                            <code>git switch -c version1</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="3">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Edit Files</h3>
+                            <p>Make your HTML, CSS, or JavaScript changes in VS Code.</p>
+                            <code>code .</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="4">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Stage</h3>
+                            <p>Prepare changed files for the next commit.</p>
+                            <code>git add .</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="5">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Commit</h3>
+                            <p>Save a snapshot of your staged changes.</p>
+                            <code>git commit -m "Add HTML and JS"</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="6">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h3>Push</h3>
+                            <p>Upload your branch to GitHub.</p>
+                            <code>git push origin version1</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="7">
+                        <div class="step-number">07</div>
+                        <div class="step-content">
+                            <h3>Open Pull Request</h3>
+                            <p>Ask to merge your branch into main.</p>
+                            <code>version1 → main</code>
+                        </div>
+                    </article>
+
+                    <article class="workflow-step" data-step="8">
+                        <div class="step-number">08</div>
+                        <div class="step-content">
+                            <h3>Merge</h3>
+                            <p>Combine approved changes into the main branch.</p>
+                            <code>Merge pull request</code>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="workflow-controls" aria-label="Workflow controls">
+                    <button class="btn btn-small" type="button" id="prevStepBtn">
+                        Previous Step
+                    </button>
+
+                    <button class="btn btn-small btn-primary" type="button" id="nextStepBtn">
+                        Next Step
+                    </button>
+                </div>
+            </section>
+
+            <!-- =================================================
+                BRANCH COLLABORATION SECTION
+            ================================================== -->
+            <section class="section branch-section" id="branches" aria-labelledby="branches-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Two Account Simulation</p>
+                    <h2 id="branches-title">Two branches, one final project</h2>
+                    <p>
+                        This section represents your practice plan: one account contributes CSS,
+                        while another account contributes HTML and JavaScript.
+                    </p>
+                </div>
+
+                <div class="branch-board">
+                    <article class="branch-card branch-main">
+                        <div class="branch-card-header">
+                            <span class="branch-chip">main</span>
+                            <span class="branch-state stable">Stable</span>
+                        </div>
+
+                        <h3>Main Branch</h3>
+                        <p>
+                            The official version of the project. Both Pull Requests eventually
+                            merge into this branch.
+                        </p>
+
+                        <ul class="branch-list">
+                            <li>Receives approved changes</li>
+                            <li>Should stay clean and working</li>
+                            <li>Represents the final project state</li>
+                        </ul>
+                    </article>
+
+                    <article class="branch-card branch-version">
+                        <div class="branch-card-header">
+                            <span class="branch-chip">version1</span>
+                            <span class="branch-state active">Active</span>
+                        </div>
+
+                        <h3>HTML + JavaScript Branch</h3>
+                        <p>
+                            This branch is used by the GenTVs account to upload the page structure
+                            and the interactive behavior.
+                        </p>
+
+                        <ul class="branch-list">
+                            <li>Adds <code>index.html</code></li>
+                            <li>Adds <code>app.js</code></li>
+                            <li>Creates interactive UI behavior</li>
+                        </ul>
+                    </article>
+
+                    <article class="branch-card branch-css">
+                        <div class="branch-card-header">
+                            <span class="branch-chip">css</span>
+                            <span class="branch-state review">Review</span>
+                        </div>
+
+                        <h3>CSS Design Branch</h3>
+                        <p>
+                            This branch is used by the other account to upload the visual design
+                            and layout styling.
+                        </p>
+
+                        <ul class="branch-list">
+                            <li>Adds <code>styles.css</code></li>
+                            <li>Controls layout and colors</li>
+                            <li>Makes the page look complete</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- =================================================
+                PULL REQUEST SIMULATOR
+            ================================================== -->
+            <section class="section pr-section" id="pull-request" aria-labelledby="pr-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Pull Request Lab</p>
+                    <h2 id="pr-title">Simulated Pull Request panel</h2>
+                    <p>
+                        Use this panel to imagine what GitHub is doing when branches are reviewed
+                        and merged.
+                    </p>
+                </div>
+
+                <div class="pr-layout">
+                    <article class="pr-card">
+                        <div class="pr-header">
+                            <div>
+                                <p class="panel-kicker">Pull Request #1</p>
+                                <h3>Add HTML and JavaScript foundation</h3>
+                            </div>
+
+                            <span class="pr-status open">Open</span>
+                        </div>
+
+                        <div class="pr-meta">
+                            <span>base: <strong>main</strong></span>
+                            <span>compare: <strong>version1</strong></span>
+                        </div>
+
+                        <div class="file-change-list">
+                            <div class="file-change added">
+                                <span>+</span>
+                                <p>index.html</p>
+                            </div>
+
+                            <div class="file-change added">
+                                <span>+</span>
+                                <p>app.js</p>
+                            </div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary merge-button"
+                            type="button"
+                            data-pr="version1"
+                        >
+                            Simulate Merge
+                        </button>
+                    </article>
+
+                    <article class="pr-card">
+                        <div class="pr-header">
+                            <div>
+                                <p class="panel-kicker">Pull Request #2</p>
+                                <h3>Add futuristic dashboard styling</h3>
+                            </div>
+
+                            <span class="pr-status open">Open</span>
+                        </div>
+
+                        <div class="pr-meta">
+                            <span>base: <strong>main</strong></span>
+                            <span>compare: <strong>css</strong></span>
+                        </div>
+
+                        <div class="file-change-list">
+                            <div class="file-change added">
+                                <span>+</span>
+                                <p>styles.css</p>
+                            </div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary merge-button"
+                            type="button"
+                            data-pr="css"
+                        >
+                            Simulate Merge
+                        </button>
+                    </article>
+                </div>
+
+                <div class="merge-result" id="mergeResult" aria-live="polite">
+                    <span class="merge-result-icon">🔀</span>
+                    <p>
+                        Merge simulation waiting. Choose a Pull Request above to see what happens.
+                    </p>
+                </div>
+            </section>
+
+            <!-- =================================================
+                TERMINAL COMMAND CENTER
+            ================================================== -->
+            <section class="section terminal-section" id="terminal" aria-labelledby="terminal-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Command Center</p>
+                    <h2 id="terminal-title">Git commands for this collaboration practice</h2>
+                    <p>
+                        These commands are written for Windows CMD. You can copy and practice them
+                        step by step.
+                    </p>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <p>CMD — GitHub Collaboration Practice</p>
+
+                        <button class="copy-terminal-btn" id="copyTerminalBtn" type="button">
+                            Copy Commands
+                        </button>
+                    </div>
+
+                    <pre class="terminal-body"><code id="terminalCode">:: Clone repository
+git clone https://github.com/GenTVs/git-collab-lab.git
+
+:: Enter project folder
+cd git-collab-lab
+
+:: Create branch for HTML and JavaScript work
+git switch -c version1
+
+:: Open project in VS Code
+code .
+
+:: After editing files
+git status
+git add .
+git commit -m "Add HTML and JavaScript structure"
+
+:: Push branch to GitHub
+git push origin version1
+
+:: Later, after Pull Request is merged
+git switch main
+git pull
+
+:: Delete local branch after merge
+git branch -d version1
+
+:: Delete remote branch after merge
+git push --delete origin version1</code></pre>
+                </div>
+            </section>
+
+            <!-- =================================================
+                INTERACTIVE LEARNING CARDS
+            ================================================== -->
+            <section class="section learning-section" aria-labelledby="learning-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Click to Learn</p>
+                    <h2 id="learning-title">Interactive Git vocabulary</h2>
+                    <p>
+                        Click each card to reveal a simple explanation. This section will be powered
+                        by JavaScript from <code>app.js</code>.
+                    </p>
+                </div>
+
+                <div class="vocab-grid">
+                    <button class="vocab-card" type="button" data-term="clone">
+                        <span>📥</span>
+                        <strong>Clone</strong>
+                        <small>Click to reveal</small>
+                    </button>
+
+                    <button class="vocab-card" type="button" data-term="branch">
+                        <span>🌿</span>
+                        <strong>Branch</strong>
+                        <small>Click to reveal</small>
+                    </button>
+
+                    <button class="vocab-card" type="button" data-term="commit">
+                        <span>💾</span>
+                        <strong>Commit</strong>
+                        <small>Click to reveal</small>
+                    </button>
+
+                    <button class="vocab-card" type="button" data-term="push">
+                        <span>☁️</span>
+                        <strong>Push</strong>
+                        <small>Click to reveal</small>
+                    </button>
+
+                    <button class="vocab-card" type="button" data-term="pull-request">
+                        <span>📬</span>
+                        <strong>Pull Request</strong>
+                        <small>Click to reveal</small>
+                    </button>
+
+                    <button class="vocab-card" type="button" data-term="merge">
+                        <span>🔀</span>
+                        <strong>Merge</strong>
+                        <small>Click to reveal</small>
+                    </button>
+                </div>
+
+                <div class="vocab-output" id="vocabOutput" aria-live="polite">
+                    <h3>Choose a Git term</h3>
+                    <p>
+                        Click a card above to see a beginner-friendly explanation here.
+                    </p>
+                </div>
+            </section>
+
+            <!-- =================================================
+                PRACTICE CHECKLIST
+            ================================================== -->
+            <section class="section practice-section" id="practice" aria-labelledby="practice-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Practice Mode</p>
+                    <h2 id="practice-title">Collaboration checklist</h2>
+                    <p>
+                        Use this checklist while practicing with two accounts and two branches.
+                    </p>
+                </div>
+
+                <div class="checklist-panel">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Create repository using the GenTVs account</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Clone the repository locally</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Create branch <code>version1</code> for HTML and JavaScript</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Create branch <code>css</code> from another account or GitHub Desktop</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Push both branches to GitHub</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Open Pull Requests for both branches</span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Merge both Pull Requests into <code>main</code></span>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <span>Pull latest <code>main</code> back to local computer</span>
+                    </label>
+                </div>
+            </section>
+        </main>
+
+        <!-- =====================================================
+            FOOTER
+        ====================================================== -->
+        <footer class="site-footer">
+            <div>
+                <h2>GitVerse Control Room</h2>
+                <p>
+                    Built as a GitHub collaboration practice project using HTML, CSS, and JavaScript.
+                </p>
+            </div>
+
+            <a href="#top" class="back-to-top">
+                Back to top ↑
+            </a>
+        </footer>
+    </div>
+
+    <!-- JavaScript file from the version1 branch -->
+    <script src="app.js"></script>
+</body>
+</html>
